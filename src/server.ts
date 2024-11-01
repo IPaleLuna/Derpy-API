@@ -11,7 +11,7 @@ const start = async () => {
 
     await app.listen({ host: '5.34.214.49', port: 3000 });
     
-    console.log("Server listening on http://localhost:3000");
+    console.log("Server listening on http://5.34.214.49:3000");
   } catch (error) {
     console.error(error);
     process.exit(1);
