@@ -45,10 +45,10 @@ const plugin: FastifyPluginAsync = async (server) => {
   });
 
   server.post('/score', { preHandler: [server.authenticate] }, async (request, reply) => {
-    const { name, score } = request.body as { name: string; score: number };
+    const { player_name, score } = request.body as { player_name: string; score: number };
     
     try {
-      const userScore = await addScore(server, name, score);
+      const userScore = await addScore(server, player_name, score);
       reply.status(201).send(userScore);
     } catch (error) {
       reply.status(500).send({ error: error });
