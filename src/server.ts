@@ -9,7 +9,7 @@ const start = async () => {
     await app.register(authPlugin);
     await app.register(scoreTableRoutesPlugin, { prefix: '/score' })
 
-    await app.listen({ port: 3000 });
+    await app.listen({ host: '5.34.214.49', port: 3000 });
     
     console.log("Server listening on http://localhost:3000");
   } catch (error) {
