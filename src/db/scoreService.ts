@@ -2,7 +2,7 @@ import "@fastify/mysql";
 import { FastifyInstance } from "fastify";
 
 export async function getScores(app: FastifyInstance) {
-  const [rows] = await app.mysql.query('SELECT * FROM Score_Table');
+  const [rows] = await app.mysql.query('SELECT * FROM Score_Table ORDER BY score DESC');
   return rows;
 }
 export async function getScoreById(app: FastifyInstance, id: number) {
